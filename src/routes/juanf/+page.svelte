@@ -75,6 +75,6 @@
         margin: 1%;
     }
     .tarjeta img {
-        width: 90vh;
+        width: 100%;
     }
 </style>
