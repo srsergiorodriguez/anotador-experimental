@@ -1,2 +1,16 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    import DataLoader from "./DataLoader.svelte";
+    import Collection from "./Collection.svelte";
+    import { datos } from "./data.js"
+</script>
+
+<div>
+    <DataLoader datos = {datos} />
+</div>
+
+<div>
+    <Collection datos = {datos} /> 
+</div>
+
+
+
