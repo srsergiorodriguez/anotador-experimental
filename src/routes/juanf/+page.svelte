@@ -1,36 +1,49 @@
 <script>
     import { csv } from 'd3-fetch';
-    import { onMount } from 'svelte';
 
     let cvsUrl;
     let data = [];
 
     async function consultarAPI(url) {
         try {
-            const response = await csv(url);
-            data = response;
-            console.log(data);
+            data = await csv(url);
         } catch (error) {
             console.error('Error al cargar datos CSV:', error);
         }
     }
 
-    onMount(() => {
-        if (cvsUrl) {
-            consultarAPI(cvsUrl);
-        }
-    });
+
+    function meDemoro() {
+        return new Promise( (resolve, error) => {
+
+            setTimeout(() => {
+                resolve("HOLA, PERDÓN LA DEMORA");
+            }, 2000);
+
+        })
+    }
+
+    async function hacerAlgo() {
+        const mensaje = await meDemoro();
+        console.log(mensaje);
+        console.log("CHAO");
+    }
+
+    hacerAlgo();
+
+    
 </script>
 
 <div class="contenedor-general">
     <h1>Anotador</h1>
 
-    <form class="formulario-csv-url" on:submit|preventDefault={async () => await consultarAPI(cvsUrl)}>
+    <form class="formulario-csv-url" on:submit|preventDefault={() => consultarAPI(cvsUrl)}>
         <!-- svelte-ignore a11y-label-has-associated-control -->
         <label>URL de una tabla CSV</label>
         <input type="url" placeholder="URL" bind:value={cvsUrl} />
         <button>Añadir datos</button>
     </form>
+
     <h3>URL de prueba:</h3> <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vS0a_VEphpTFGHjW4BF3_uihhL372X34cNfPd733zNkr4hbD29wOhVZyi42ta9biXoP94WoS_gW1Xwo/pub?output=csv">https://docs.google.com/spreadsheets/d/e/2PACX-1vS0a_VEphpTFGHjW4BF3_uihhL372X34cNfPd733zNkr4hbD29wOhVZyi42ta9biXoP94WoS_gW1Xwo/pub?output=csv</a>
 
     {#if data.length > 0}

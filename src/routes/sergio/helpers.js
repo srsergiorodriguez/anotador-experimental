@@ -7,3 +7,11 @@ export let uniqueId = () => {
 export let firstUppercase = (str) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
+
+export let validateData = (data) => {
+  validateRow();
+}
+
+export let validateRow = (row) => {
+
+}

@@ -11,7 +11,9 @@
     // SE PUEDEN AGREGAR FORMAS DE VALIDACIÓN MÁS SOFISTICADAS
     const validInputs = inputs.reduce((a,c) => c.value === "" || !a ? false : true);
     if (!validInputs) { alert("You must fill all inputs with valid values"); return }
+
     const newItemData = {
+      // FORMATO DE LA COLLECTION STORE
       uid: uniqueId(),
       name: nameInput.value,
       manifest: manifestInput.value,
@@ -19,7 +21,7 @@
     }
     $collectionStore.push(newItemData);
     $collectionStore = $collectionStore;
-    console.log(window.crypto.randomUUID()); // AVERIGUAR SOBRE ESTE SISTEMA DE UIDS
+    // console.log(window.crypto.randomUUID()); // AVERIGUAR SOBRE ESTE SISTEMA DE UIDS
   }
 </script>
 
@@ -35,7 +37,7 @@
   </div>
   <div class="input-container">
     <span>IIIF image:</span>
-    <input bind:this={imageUrlInput} type="text" placeholder="paste IIIF image url" />
+    <input bind:this={imageUrlInput} type="url" placeholder="paste IIIF image url" />
   </div>
   <div>
     <button on:click={addItem}>ADD</button>
