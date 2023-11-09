@@ -50,7 +50,7 @@
 
 <div class="collection-loader-container">
   <div class="file-loader-container">
-    <label for="load-collection-input">Load a CSV file from the computer:
+    <label for="load-collection-input">Load CSV file from the computer:
       <input type="file" id="load-collection-input" bind:this={input} on:change={loadFile} on:click={(e) => e.target.value = null}/>
     </label>
   </div>

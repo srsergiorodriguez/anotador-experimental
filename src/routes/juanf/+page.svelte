@@ -11,26 +11,6 @@
             console.error('Error al cargar datos CSV:', error);
         }
     }
-
-
-    function meDemoro() {
-        return new Promise( (resolve, error) => {
-
-            setTimeout(() => {
-                resolve("HOLA, PERDÓN LA DEMORA");
-            }, 2000);
-
-        })
-    }
-
-    async function hacerAlgo() {
-        const mensaje = await meDemoro();
-        console.log(mensaje);
-        console.log("CHAO");
-    }
-
-    hacerAlgo();
-
     
 </script>
 

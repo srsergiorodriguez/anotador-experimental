@@ -38,8 +38,4 @@
   .mass-processing-container {
     border: solid 1px pink;
   }
-
-  .collection-container {
-    /* max-width: 900px; */
-  }
 </style>

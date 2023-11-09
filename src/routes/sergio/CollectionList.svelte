@@ -36,7 +36,7 @@
     if (checkedItems.size === 0) return
     if (confirm("Confirm you want to delete the selected items")) {
       for (let uid of [...checkedItems]) {
-        $collectionStore = $collectionStore.filter(d => d.uid !== uid);
+        removeItem(uid);
       }
     }
   }
