@@ -1,9 +1,9 @@
 <script>
-  import CollectionList from "./sergio/CollectionList.svelte";
-  import CollectionLoader from "./sergio/CollectionLoader.svelte";
-  import ItemAdder from "./sergio/ItemAdder.svelte";
+  import CollectionList from "./CollectionList.svelte";
+  import CollectionLoader from "./CollectionLoader.svelte";
+  import ItemAdder from "./ItemAdder.svelte";
 
-  import ProjectMetadata from "./sergio/ProjectMetadata.svelte";
+  import ProjectMetadata from "./ProjectMetadata.svelte";
 
   import { projectStore } from "./projectStore.js"
 
